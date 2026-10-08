@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Open Library API Client</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <h1>Open Library API Client</h1>
+        <p>Laboratory Work 6 — Async, Fetch, REST API</p>
+      </div>
+    </header>
+
+    <main class="container main-content">
+      <section class="search-panel" aria-labelledby="search-title">
+        <h2 id="search-title">Search books</h2>
+        <form id="search-form" class="search-form">
+          <label class="sr-only" for="search-input">Search books</label>
+          <input
+            id="search-input"
+            name="query"
+            type="text"
+            placeholder="Search books: javascript"
+            aria-label="Search books"
+          />
+          <button type="submit">Search</button>
+        </form>
+      </section>
+
+      <div id="loading" class="status loading" role="status" aria-live="polite">
+        Loading...
+      </div>
+
+      <div id="error" class="status error hidden" role="alert" aria-live="assertive"></div>
+
+      <section class="featured-section" aria-labelledby="featured-title">
+        <h2 id="featured-title">Featured books</h2>
+        <div id="featured-books" class="book-grid"></div>
+      </section>
+
+      <section class="search-results-section" aria-labelledby="results-title">
+        <h2 id="results-title">Search results</h2>
+        <div id="search-results" class="book-grid"></div>
+      </section>
+
+      <section class="details-section" aria-labelledby="details-title">
+        <h2 id="details-title">Book details</h2>
+        <div id="book-details" class="book-details"></div>
+      </section>
+    </main>
+
+    <script src="src/app.js"></script>
+  </body>
+</html>

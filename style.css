@@ -1,0 +1,252 @@
+:root {
+  --bg: #f5f7fb;
+  --surface: #ffffff;
+  --surface-alt: #eef3ff;
+  --primary: #2d5bff;
+  --primary-dark: #1f46c8;
+  --text: #1d2433;
+  --muted: #5c6474;
+  --border: #dfe6f2;
+  --error: #c62828;
+  --error-bg: #ffe6e6;
+  --shadow: 0 8px 24px rgba(25, 35, 62, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.container {
+  width: min(1100px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.site-header {
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  padding: 2rem 0 1.5rem;
+}
+
+.site-header h1 {
+  margin: 0 0 0.4rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+.site-header p {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 1.05rem;
+}
+
+.main-content {
+  padding: 2rem 0 3rem;
+}
+
+.search-panel,
+.featured-section,
+.search-results-section,
+.details-section {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.search-panel h2,
+.featured-section h2,
+.search-results-section h2,
+.details-section h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.search-form {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.search-form input {
+  flex: 1 1 280px;
+  min-width: 160px;
+  padding: 0.8rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+.search-form button,
+.book-card button {
+  border: none;
+  border-radius: 10px;
+  background: var(--primary);
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.search-form button {
+  padding: 0.8rem 1.25rem;
+  font-weight: 700;
+}
+
+.search-form button:hover,
+.book-card button:hover {
+  background: var(--primary-dark);
+}
+
+.status {
+  border-radius: 12px;
+  padding: 0.8rem 1rem;
+  margin-bottom: 1.5rem;
+  display: none;
+}
+
+.status.loading {
+  background: var(--surface-alt);
+  color: var(--text);
+  border: 1px solid var(--border);
+  display: block;
+}
+
+.status.error {
+  background: var(--error-bg);
+  border: 1px solid #f1b5b5;
+  color: var(--error);
+  display: block;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.book-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-cover {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  background: #ebf0f7;
+}
+
+.book-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1rem;
+  flex: 1;
+}
+
+.book-content h3 {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+.book-meta {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.book-card button {
+  margin-top: auto;
+  padding: 0.7rem 1rem;
+  font-weight: 600;
+}
+
+.featured-section .book-section + .book-section {
+  margin-top: 1.5rem;
+}
+
+.featured-section h3,
+.search-results-section h3 {
+  margin: 0 0 0.8rem;
+}
+
+.book-details {
+  min-height: 150px;
+}
+
+.details-card {
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem;
+}
+
+.details-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.details-card p,
+.details-card ul {
+  margin-top: 0;
+  color: var(--text);
+}
+
+.details-card ul {
+  padding-left: 1.2rem;
+}
+
+.empty-state {
+  color: var(--muted);
+  padding: 1rem 0;
+}
+
+@media (max-width: 640px) {
+  .site-header {
+    padding-top: 1.5rem;
+  }
+
+  .search-panel,
+  .featured-section,
+  .search-results-section,
+  .details-section {
+    padding: 1rem;
+  }
+}
